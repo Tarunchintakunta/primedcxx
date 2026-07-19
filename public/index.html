@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PRIME DCX — Trade Without Limits</title>
+<meta name="description" content="PRIME DCX. A next-generation CFD trading platform. 0.0 pip spreads, instant execution, 24/5 global markets." />
+<link rel="icon" href="assets/brand/icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;600;800&family=Archivo:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ============ LOADER ============ -->
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader-word">PRIME<i class="lg-div"></i><em>DCX</em></div>
+  <div class="loader-bar"><div class="loader-bar-fill" id="loaderFill"></div></div>
+  <div class="loader-pct mono" id="loaderPct">00%</div>
+</div>
+
+<!-- ============ FIXED CINEMA STAGE ============ -->
+<div class="stage" id="stage" aria-hidden="true">
+  <canvas id="film"></canvas>
+  <div class="stage-vignette"></div>
+  <div class="stage-grain"></div>
+</div>
+
+<!-- ============ TOP NAV ============ -->
+<header class="nav">
+  <a class="nav-brand" href="/" aria-label="PRIME DCX home">
+    <span class="nav-word">PRIME<i class="lg-div"></i><em>DCX</em></span>
+  </a>
+  <nav class="nav-links mono" aria-label="Main">
+    <a href="/markets/">MARKETS</a>
+    <a href="/accounts/">ACCOUNTS</a>
+    <a href="/platform/">PLATFORM</a>
+    <a href="/blog/">INSIGHTS</a>
+    <a href="/company/">COMPANY</a>
+    <a href="https://client.primedcx.com/en/auth/sign-in">LOG IN</a>
+  </nav>
+  <a class="nav-cta mono" href="https://client.primedcx.com/en/auth/sign-up">START TRADING</a>
+</header>
+
+<!-- ============ RIGHT-EDGE HUD / ALTIMETER (signature) ============ -->
+<aside class="hud" id="hud" aria-hidden="true">
+  <div class="hud-top mono">
+    <span class="hud-dot"></span> LIVE
+  </div>
+
+  <div class="hud-zone">
+    <div class="hud-zone-label mono">ZONE</div>
+    <div class="hud-zone-flap" id="zoneFlap">
+      <span class="flap-text mono" id="zoneText">STREET</span>
+    </div>
+    <div class="hud-zone-index mono" id="zoneIndex">01 / 05</div>
+  </div>
+
+  <div class="hud-data mono">
+    <div class="hud-row"><span class="k">EUR/USD</span><span class="v" id="tSpread">0.0</span></div>
+    <div class="hud-row"><span class="k">EXEC</span><span class="v" id="tExec">31ms</span></div>
+    <div class="hud-row"><span class="k">PAIRS</span><span class="v" id="tPairs">0</span></div>
+    <div class="hud-row"><span class="k">ALT</span><span class="v" id="tAlt">12m</span></div>
+  </div>
+
+  <div class="hud-alti" id="alti">
+    <div class="hud-alti-fill" id="altiFill"></div>
+    <div class="hud-alti-ticks">
+      <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+      <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+    </div>
+  </div>
+
+  <div class="hud-bottom mono" id="hudPct">000</div>
+</aside>
+
+<!-- ============ SCROLL SCENES (fixed, revealed per zone) ============ -->
+<main class="scenes" id="top">
+
+  <!-- ZONE 1 · STREET · hero -->
+  <section class="scene scene-hero" data-zone="0" aria-label="Hero">
+    <div class="scene-inner">
+      <p class="eyebrow mono reveal">PRIME DCX — NEXT-GEN CFD PLATFORM</p>
+      <h1 class="hero-title">
+        <span class="line reveal">TRADE</span>
+        <span class="line reveal">WITHOUT</span>
+        <span class="line reveal accent gold">LIMITS.</span>
+      </h1>
+      <p class="hero-sub reveal">Scale with PRIME DCX — 150+ pairs with institutional-grade execution, zero spreads and deep liquidity. From the street to the globe.</p>
+      <div class="hero-ctas reveal">
+        <a class="btn btn-gold" href="https://client.primedcx.com/en/auth/sign-up" role="button">Start Trading</a>
+        <a class="btn btn-dark" href="https://client.primedcx.com/en/auth/sign-in" role="button">Launch Web Trader</a>
+      </div>
+      <div class="scroll-hint reveal" aria-hidden="true">
+        <div class="scroll-hint-line"></div>
+        <span class="mono">SCROLL TO ASCEND</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ZONE 2 · RISING · stats -->
+  <section class="scene scene-stats" data-zone="1" aria-label="Execution stats">
+    <div class="scene-inner">
+      <p class="eyebrow mono reveal">02 — RISING</p>
+      <h2 class="scene-title reveal">Built for the<br /><span class="accent">speed of the street.</span></h2>
+      <div class="stats">
+        <div class="stat reveal">
+          <div class="stat-num"><span class="count" data-to="0.0" data-dec="1">0.0</span></div>
+          <div class="stat-label mono">PIP SPREADS FROM</div>
+        </div>
+        <div class="stat reveal">
+          <div class="stat-num"><span class="count" data-to="31" data-suffix="ms">0</span></div>
+          <div class="stat-label mono">AVG. EXECUTION</div>
+        </div>
+        <div class="stat reveal">
+          <div class="stat-num"><span class="count" data-to="99.9" data-dec="1" data-suffix="%">0</span></div>
+          <div class="stat-label mono">FILL RATE</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ZONE 3 · SKYLINE · multi-asset -->
+  <section class="scene scene-assets" data-zone="2" aria-label="Markets">
+    <div class="scene-inner">
+      <p class="eyebrow mono reveal">03 — BREAKING THE SKYLINE</p>
+      <h2 class="scene-title reveal">One account.<br /><span class="accent">Every market.</span></h2>
+      <ul class="assets">
+        <li class="asset reveal">
+          <span class="asset-name">Forex</span>
+          <span class="asset-meta mono">55+ PAIRS · EUR/USD 0.0</span>
+        </li>
+        <li class="asset reveal">
+          <span class="asset-name">Crypto</span>
+          <span class="asset-meta mono">40+ COINS · 24/7 CFD</span>
+        </li>
+        <li class="asset reveal">
+          <span class="asset-name">Indices</span>
+          <span class="asset-meta mono">SPX · NAS · DAX · NIKKEI</span>
+        </li>
+        <li class="asset reveal">
+          <span class="asset-name">Commodities</span>
+          <span class="asset-meta mono">GOLD · OIL · SILVER · GAS</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ZONE 4 · ORBIT · global -->
+  <section class="scene scene-globe" data-zone="3" aria-label="Global markets">
+    <div class="scene-inner">
+      <p class="eyebrow mono reveal">04 — ORBIT</p>
+      <h2 class="scene-title reveal">The whole planet,<br /><span class="accent gold">on one screen.</span></h2>
+      <p class="scene-copy reveal">Liquidity routed through regulated venues in every major session — follow the sun from Sydney open to New York close, 24 hours a day, 5 days a week.</p>
+      <div class="cities mono">
+        <span class="city reveal">LONDON <em id="ckLON">08:00</em></span>
+        <span class="city reveal">NEW YORK <em id="ckNYC">03:00</em></span>
+        <span class="city reveal">TOKYO <em id="ckTYO">17:00</em></span>
+        <span class="city reveal">DUBAI <em id="ckDXB">12:00</em></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ZONE 5 · GLOBE · CTA -->
+  <section class="scene scene-cta" data-zone="4" id="start" aria-label="Start trading">
+    <div class="scene-inner center">
+      <p class="eyebrow mono reveal">05 — GLOBE</p>
+      <h2 class="cta-title">
+        <span class="line reveal">YOUR MARKET</span>
+        <span class="line reveal accent">AWAITS.</span>
+      </h2>
+      <a class="cta-btn reveal" href="https://client.primedcx.com/en/auth/sign-up" role="button">
+        <span>Start Trading</span>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+      </a>
+      <p class="cta-fine mono reveal">DEMO ACCOUNT · NO DEPOSIT REQUIRED · REGULATED LIQUIDITY</p>
+    </div>
+  </section>
+
+</main>
+
+<!-- scroll track: this element's height defines the flight length -->
+<div class="track" id="track" aria-hidden="true"></div>
+
+<!-- ============ FOOTER (after the flight) ============ -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-col footer-brand-col">
+      <span class="footer-brand">PRIME<i class="lg-div"></i><em>DCX</em></span>
+      <p class="footer-tag">A next-generation CFD trading platform. From the street to the globe — 0.0 pip spreads, instant execution, 24/5 global markets.</p>
+      <div class="footer-social">
+        <a href="https://x.com/PrimeDCX" aria-label="PRIME DCX on X">X</a>
+        <a href="https://www.instagram.com/primedcx/" aria-label="PRIME DCX on Instagram">IG</a>
+        <a href="https://www.linkedin.com/company/prime-dcx/" aria-label="PRIME DCX on LinkedIn">IN</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4 class="mono">EXPLORE</h4>
+      <a href="/markets/">Markets</a>
+      <a href="/accounts/">Accounts</a>
+      <a href="/platform/">Platform</a>
+      <a href="/blog/">Insights</a>
+      <a href="/company/">Company</a>
+    </div>
+    <div class="footer-col">
+      <h4 class="mono">LEGAL</h4>
+      <a href="/legal/terms/">Terms &amp; Conditions</a>
+      <a href="/legal/privacy/">Privacy Policy</a>
+      <a href="/legal/risk/">Risk Disclosure</a>
+      <a href="/legal/aml-kyc/">AML / KYC Policy</a>
+    </div>
+    <div class="footer-col">
+      <h4 class="mono">CONTACT</h4>
+      <p class="footer-addr">Prime DCX Ltd.<br />Registration Nº 2025-00921<br />Ground Floor, The Sotheby Building,<br />Rodney Village, Rodney Bay,<br />Gros-Islet, Saint Lucia</p>
+      <a href="mailto:support@primedcx.com">support@primedcx.com</a>
+    </div>
+  </div>
+  <div class="footer-inner">
+    <span class="mono">© 2026 Prime DCX Ltd. All rights reserved.</span>
+    <span class="mono footer-risk">Risk warning: CFDs are leveraged products and carry a high level of risk to your capital. Trade responsibly.</span>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

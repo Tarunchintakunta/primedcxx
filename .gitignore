@@ -1,2 +1,5 @@
 assets/alt-photoreal/
 .DS_Store
+node_modules/
+.next/
+out/
