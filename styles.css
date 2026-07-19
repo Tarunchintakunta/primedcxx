@@ -52,16 +52,6 @@ body {
   transition: opacity 0.7s ease, visibility 0.7s;
 }
 .loader.done { opacity: 0; visibility: hidden; }
-.loader-mark {
-  width: clamp(88px, 12vw, 128px); aspect-ratio: 1;
-  object-fit: cover; object-position: top;
-  animation: markpulse 2.2s ease-in-out infinite;
-  filter: drop-shadow(0 0 28px rgba(220,171,79,.35));
-}
-@keyframes markpulse {
-  0%,100% { transform: scale(1); filter: drop-shadow(0 0 18px rgba(220,171,79,.25)); }
-  50% { transform: scale(1.04); filter: drop-shadow(0 0 38px rgba(220,171,79,.5)); }
-}
 .loader-word {
   font-family: var(--display); font-weight: 600;
   font-size: clamp(18px, 3vw, 26px); letter-spacing: 0.18em;
@@ -427,6 +417,6 @@ a:focus-visible, .cta-btn:focus-visible { outline: 2px solid var(--green); outli
 
 /* ---------------- reduced motion ---------------- */
 @media (prefers-reduced-motion: reduce) {
-  .stage-grain, .loader-mark, .hud-dot, .scroll-hint-line::after { animation: none; }
+  .stage-grain, .hud-dot, .scroll-hint-line::after { animation: none; }
   .reveal, .scene { transition-duration: .01s; }
 }
