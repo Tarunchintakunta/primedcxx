@@ -55,6 +55,13 @@ export default function RootLayout({ children }) {
               ))}
             </div>
             <div className="foot__col">
+              <h4 className="mono">RESOURCES</h4>
+              <a href="/conditions/">Trading Conditions</a>
+              <a href="/tools/">Tools</a>
+              <a href="/learn/">Learn</a>
+              <a href="/open-account/">Open Account</a>
+            </div>
+            <div className="foot__col">
               <h4 className="mono">LEGAL</h4>
               <a href="/legal/terms/">Terms &amp; Conditions</a>
               <a href="/legal/privacy/">Privacy Policy</a>
