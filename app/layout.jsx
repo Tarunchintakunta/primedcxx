@@ -11,6 +11,7 @@ const NAV = [
   ['/markets/', 'MARKETS'],
   ['/accounts/', 'ACCOUNTS'],
   ['/platform/', 'PLATFORM'],
+  ['/partners/', 'PARTNERS'],
   ['/blog/', 'INSIGHTS'],
   ['/company/', 'COMPANY'],
 ];
