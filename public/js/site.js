@@ -1,4 +1,4 @@
-/* PRIME DCX — shared subpage behavior: ticker tape, reveals, quote drift */
+/* PRIME DCX - shared subpage behavior: ticker tape, reveals, quote drift */
 (() => {
   'use strict';
 

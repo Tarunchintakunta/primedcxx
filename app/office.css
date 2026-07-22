@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════════
-   PRIME DCX — market-city flythrough
+   PRIME DCX - market-city flythrough
    palette: obsidian / bid-green / ask-red / data-gold / ghost-mint
    ═══════════════════════════════════════════════════════════════ */
 
@@ -15,9 +15,9 @@
   --bg:       #04060a;
   --ink:      #e6f4ee;
   --dim:      #8fa39c;
-  --bid:      #2bf396;   /* green — market up */
-  --ask:      #ff4d5e;   /* red — market down */
-  --gold:     #dcab4f;   /* brand gold — matches the PRIME|DCX logo */
+  --bid:      #2bf396;   /* green - market up */
+  --ask:      #ff4d5e;   /* red - market down */
+  --gold:     #dcab4f;   /* brand gold - matches the PRIME|DCX logo */
   --gold-hi:  #f0c56a;
   --hairline: rgba(190, 230, 215, 0.16);
   --panel-w:  min(700px, 90vw);
@@ -243,7 +243,7 @@ a { color: inherit; text-decoration: none; }
 .btn--ghost:hover { border-color: var(--gold); color: var(--gold-hi); }
 .btn--xl { padding: 21px 50px; font-size: 18px; }
 
-/* stats — rising zone */
+/* stats - rising zone */
 .stats { display: flex; gap: clamp(28px, 4.5vw, 64px); flex-wrap: wrap; }
 .stat { border-left: 2px solid var(--bid); padding-left: 20px; }
 .stat__num {
@@ -253,7 +253,7 @@ a { color: inherit; text-decoration: none; }
 }
 .stat__label { display: block; margin-top: 10px; font-size: 11px; letter-spacing: .22em; color: var(--dim); }
 
-/* assets — skyline zone */
+/* assets - skyline zone */
 .panel--wide > * { max-width: min(1100px, calc(100vw - var(--hud-w) - clamp(40px, 10vw, 160px))); }
 .assets {
   display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -275,7 +275,7 @@ a { color: inherit; text-decoration: none; }
 .asset__px.is-down { color: var(--ask); }
 .asset p { font-size: 14px; color: var(--dim); line-height: 1.55; }
 
-/* sessions — orbit zone */
+/* sessions - orbit zone */
 .sessions { list-style: none; display: flex; flex-direction: column; gap: 0; border-top: 1px solid var(--hairline); max-width: 600px; }
 .sessions li {
   display: grid; grid-template-columns: 20px 1fr auto; align-items: center; gap: 16px;
@@ -360,7 +360,7 @@ body.rm .hud { opacity: .5; }
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   SUBPAGES — markets / accounts / platform / company / blog / legal
+   SUBPAGES - markets / accounts / platform / company / blog / legal
    ═══════════════════════════════════════════════════════════════ */
 
 .page { background: var(--bg); min-height: 100vh; display: flex; flex-direction: column; }

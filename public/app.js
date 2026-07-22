@@ -1,5 +1,5 @@
 /* ============================================================
-   PRIME DCX — scroll-scrubbed cinema
+   PRIME DCX - scroll-scrubbed cinema
    frames are declared in manifest.json: { count, path, pad, ext }
    ============================================================ */
 
@@ -14,7 +14,7 @@
   try {
     manifest = await (await fetch("manifest.json")).json();
   } catch (e) {
-    console.warn("manifest.json missing — film disabled", e);
+    console.warn("manifest.json missing - film disabled", e);
   }
   const FRAMES = manifest.count;
   const frameSrc = (i) =>
