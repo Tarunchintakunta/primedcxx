@@ -3,7 +3,7 @@ import './home.css';
 
 export const metadata = {
   title: 'PRIME DCX - Trade Without Limits',
-  description: 'PRIME DCX. A next-generation CFD trading platform. 0.0 pip spreads, instant execution, 24/5 global markets.',
+  description: 'PRIME DCX. Global Markets. Prime Access. Institutional-grade CFD execution across forex, crypto, commodities and indices, with spreads from 0.0 pips.',
   icons: { icon: '/assets/brand/icon.png' },
 };
 
@@ -37,11 +37,10 @@ export default function HomePage() {
           <span className="nav-word">PRIME<i className="lg-div"></i><em>DCX</em></span>
         </a>
         <nav className="nav-links mono" aria-label="Main">
-          <a href="/markets/">MARKETS</a>
-          <a href="/accounts/">ACCOUNTS</a>
+          <a href="/markets/">TRADE</a>
           <a href="/platform/">PLATFORM</a>
-          <a href="/partners/">PARTNERS</a>
-          <a href="/blog/">INSIGHTS</a>
+          <a href="/tools/">TOOLS</a>
+          <a href="/learn/help-centre/">LEARN</a>
           <a href="/company/">COMPANY</a>
           <a href="https://client.primedcx.com/en/auth/sign-in">LOG IN</a>
         </nav>
@@ -86,7 +85,7 @@ export default function HomePage() {
         {/* ZONE 1 · STREET · hero */}
         <section className="scene scene-hero" data-zone="0" aria-label="Hero">
           <div className="scene-inner">
-            <p className="eyebrow mono reveal">PRIME DCX - NEXT-GEN CFD PLATFORM</p>
+            <p className="eyebrow mono reveal">PRIME DCX - GLOBAL MARKETS. PRIME ACCESS.</p>
             <h1 className="hero-title">
               <span className="line reveal">TRADE</span>
               <span className="line reveal">WITHOUT</span>
@@ -179,7 +178,7 @@ export default function HomePage() {
               <span>Start Trading</span>
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" strokeWidth="2"/></svg>
             </a>
-            <p className="cta-fine mono reveal">DEMO ACCOUNT · NO DEPOSIT REQUIRED · REGULATED LIQUIDITY</p>
+            <p className="cta-fine mono reveal">LIVE ACCOUNT FROM $100 · SPREADS FROM 0.0 PIPS · WITHDRAWALS IN 24 HOURS</p>
           </div>
         </section>
 
@@ -193,7 +192,7 @@ export default function HomePage() {
         <div className="footer-grid">
           <div className="footer-col footer-brand-col">
             <span className="footer-brand">PRIME<i className="lg-div"></i><em>DCX</em></span>
-            <p className="footer-tag">A next-generation CFD trading platform. From the street to the globe - 0.0 pip spreads, instant execution, 24/5 global markets.</p>
+            <p className="footer-tag">Global Markets. Prime Access. Institutional-grade execution across forex, crypto, commodities and indices, with spreads from 0.0 pips.</p>
             <div className="footer-social">
               <a href="https://x.com/PrimeDCX" aria-label="PRIME DCX on X">X</a>
               <a href="https://www.instagram.com/primedcx/" aria-label="PRIME DCX on Instagram">IG</a>
@@ -201,13 +200,22 @@ export default function HomePage() {
             </div>
           </div>
           <div className="footer-col">
-            <h4 className="mono">EXPLORE</h4>
-            <a href="/markets/">Markets</a>
-            <a href="/accounts/">Accounts</a>
-            <a href="/platform/">Platform</a>
-            <a href="/partners/">Partners</a>
+            <h4 className="mono">TRADE</h4>
+            <a href="/markets/">Range of Markets</a>
+            <a href="/conditions/spreads/">Spreads &amp; Commission</a>
+            <a href="/conditions/contract-specs/">Contract Specifications</a>
+            <a href="/conditions/trading-hours/">Trading Hours</a>
+            <a href="/accounts/">Account Types</a>
+            <a href="/platform/">Web Trader</a>
+          </div>
+          <div className="footer-col">
+            <h4 className="mono">COMPANY</h4>
+            <a href="/company/">Why PRIME DCX</a>
+            <a href="/company/regulation/">Regulation</a>
+            <a href="/partners/">IB Partner Programme</a>
+            <a href="/learn/help-centre/">Help Centre</a>
+            <a href="/learn/glossary/">Glossary</a>
             <a href="/blog/">Insights</a>
-            <a href="/company/">Company</a>
           </div>
           <div className="footer-col">
             <h4 className="mono">LEGAL</h4>

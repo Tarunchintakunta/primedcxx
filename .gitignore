@@ -3,3 +3,6 @@ assets/alt-photoreal/
 node_modules/
 .next/
 out/
+
+# local Claude Code prefs (machine-specific)
+.claude/settings.local.json

@@ -19,11 +19,47 @@
     tape.innerHTML = row + ' ' + row;
   }
 
-  /* ── reveal on scroll ─────────────────────────────────────────── */
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
-  document.querySelectorAll('.rv').forEach(el => io.observe(el));
+  /* ── reveal on scroll ─────────────────────────────────────────────
+     Content ships visible. We only opt into the hidden-then-revealed
+     state once we know we can drive it, and we keep several independent
+     ways of getting an element back to visible so nothing can strand
+     content at opacity 0: the observer, a viewport sweep on scroll and
+     visibility change, and a hard failsafe timer.                     */
+  const targets = () => document.querySelectorAll('.rv:not(.in)');
+  const revealAll = () => targets().forEach(el => el.classList.add('in'));
+
+  if (!('IntersectionObserver' in window)) {
+    revealAll();
+  } else {
+    document.documentElement.classList.add('rv-ready');
+
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+
+    targets().forEach(el => io.observe(el));
+
+    // Sweep anything already inside the viewport. Covers what the observer
+    // misses: a backgrounded tab on load, a restored scroll position, or an
+    // element too tall to ever reach the 12% threshold.
+    const sweep = () => {
+      const h = window.innerHeight || document.documentElement.clientHeight;
+      targets().forEach(el => {
+        const r = el.getBoundingClientRect();
+        if (r.top < h * 0.94 && r.bottom > 0) { el.classList.add('in'); io.unobserve(el); }
+      });
+    };
+
+    addEventListener('scroll', sweep, { passive: true });
+    addEventListener('resize', sweep, { passive: true });
+    document.addEventListener('visibilitychange', () => { if (!document.hidden) sweep(); });
+    sweep();
+
+    // Last resort: never leave content invisible.
+    setTimeout(revealAll, 4000);
+  }
 
   /* ── gentle price drift on any [data-px-drift] mono numbers ───── */
   document.querySelectorAll('[data-px-drift]').forEach(el => {
