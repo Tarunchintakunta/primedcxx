@@ -212,6 +212,18 @@
   }
   requestAnimationFrame(loop);
 
+  /* Scene copy is revealed by `.scene.active`, which only setZone() applies.
+     rAF is suspended while the tab is hidden, so a page opened in a background
+     tab would never activate a scene and every .reveal would stay at opacity 0 -
+     a blank hero. Sync the zone synchronously at boot and again whenever the
+     page becomes visible, so the copy is never stranded. */
+  function syncZone() {
+    computeProgress();
+    setZone(Math.min(4, Math.floor(progress * 5)));
+  }
+  syncZone();
+  document.addEventListener("visibilitychange", () => { if (!document.hidden) syncZone(); });
+
   /* ---------- boot: load pass 1, drop loader, keep filling ---------- */
   if (FRAMES > 0) {
     let done = 0;

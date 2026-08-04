@@ -91,7 +91,7 @@ export default function HomePage() {
               <span className="line reveal">WITHOUT</span>
               <span className="line reveal accent gold">LIMITS.</span>
             </h1>
-            <p className="hero-sub reveal">Scale with PRIME DCX - 60+ pairs with institutional-grade execution, zero spreads and deep liquidity. From the street to the globe.</p>
+            <p className="hero-sub reveal">Scale with PRIME DCX - 66 currency pairs with institutional-grade execution, spreads from 0.0 pips and deep liquidity. From the street to the globe.</p>
             <div className="hero-ctas reveal">
               <a className="btn btn-gold" href="https://client.primedcx.com/en/auth/sign-up" role="button">Start Trading</a>
               <a className="btn btn-dark" href="https://client.primedcx.com/en/auth/sign-in" role="button">Launch Web Trader</a>
