@@ -109,47 +109,17 @@
   let shownFrame = 0;   // eased, fractional
   let dirty = true;
 
-  /* ---------- HUD ---------- */
-  const ZONES = ["STREET", "RISING", "SKYLINE", "ORBIT", "GLOBE"];
-  const zoneText = $("#zoneText");
-  const zoneIndex = $("#zoneIndex");
-  const altiFill = $("#altiFill");
-  const hudPct = $("#hudPct");
-  const tSpread = $("#tSpread");
-  const tExec = $("#tExec");
-  const tPairs = $("#tPairs");
-  const tAlt = $("#tAlt");
+  /* ---------- zones ----------
+     Drives which scene is active. The scene copy is revealed by `.scene.active`,
+     so this has to keep running even though the HUD it used to feed is gone. */
   let currentZone = -1;
 
   function setZone(z) {
     if (z === currentZone) return;
     currentZone = z;
-    zoneText.classList.add("flip");
-    setTimeout(() => {
-      zoneText.textContent = ZONES[z];
-      zoneText.style.color = z >= 3 ? "var(--gold)" : "var(--green)";
-      zoneText.style.textShadow = z >= 3 ? "0 0 14px rgba(245,197,66,.5)" : "0 0 14px rgba(0,230,122,.5)";
-      zoneText.classList.remove("flip");
-      zoneIndex.textContent = "0" + (z + 1) + " / 05";
-    }, reduceMotion ? 0 : 220);
-    // scene visibility
     document.querySelectorAll(".scene").forEach((s) => {
       s.classList.toggle("active", +s.dataset.zone === z);
     });
-  }
-
-  // deterministic pseudo-live numbers driven by progress + time
-  function hudTick(now) {
-    const p = progress;
-    const wob = Math.sin(now / 530) * 0.5 + Math.sin(now / 197) * 0.5; // -1..1
-    const spread = Math.max(0, 0.0 + (wob > 0.72 ? 0.1 : 0.0));
-    tSpread.textContent = spread.toFixed(1);
-    tExec.textContent = Math.round(31 + wob * 6) + "ms";
-    tPairs.textContent = String(Math.round(12 + p * 143));
-    const alt = p < 0.6 ? Math.round(12 + p * 1400) + "m" : (p * 35).toFixed(0) + "km";
-    tAlt.textContent = alt;
-    altiFill.style.height = (p * 100).toFixed(2) + "%";
-    hudPct.textContent = String(Math.round(p * 100)).padStart(3, "0");
   }
 
   /* ---------- session clocks (orbit zone) ---------- */
@@ -207,7 +177,6 @@
     setZone(z);
     if (z === 1) playStats();
 
-    hudTick(now);
     requestAnimationFrame(loop);
   }
   requestAnimationFrame(loop);

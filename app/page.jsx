@@ -47,38 +47,6 @@ export default function HomePage() {
         <a className="nav-cta mono" href="https://client.primedcx.com/en/auth/sign-up">START TRADING</a>
       </header>
 
-      {/* ============ RIGHT-EDGE HUD / ALTIMETER (signature) ============ */}
-      <aside className="hud" id="hud" aria-hidden="true">
-        <div className="hud-top mono">
-          <span className="hud-dot"></span> LIVE
-        </div>
-
-        <div className="hud-zone">
-          <div className="hud-zone-label mono">ZONE</div>
-          <div className="hud-zone-flap" id="zoneFlap">
-            <span className="flap-text mono" id="zoneText">STREET</span>
-          </div>
-          <div className="hud-zone-index mono" id="zoneIndex">01 / 05</div>
-        </div>
-
-        <div className="hud-data mono">
-          <div className="hud-row"><span className="k">EUR/USD</span><span className="v" id="tSpread">0.0</span></div>
-          <div className="hud-row"><span className="k">EXEC</span><span className="v" id="tExec">38ms</span></div>
-          <div className="hud-row"><span className="k">PAIRS</span><span className="v" id="tPairs">0</span></div>
-          <div className="hud-row"><span className="k">ALT</span><span className="v" id="tAlt">12m</span></div>
-        </div>
-
-        <div className="hud-alti" id="alti">
-          <div className="hud-alti-fill" id="altiFill"></div>
-          <div className="hud-alti-ticks">
-            <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
-            <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
-          </div>
-        </div>
-
-        <div className="hud-bottom mono" id="hudPct">000</div>
-      </aside>
-
       {/* ============ SCROLL SCENES (fixed, revealed per zone) ============ */}
       <main className="scenes" id="top">
 

@@ -233,54 +233,6 @@ a { color: inherit; text-decoration: none; }
   .mnav { transition: none; }
 }
 
-/* ── HUD altimeter (signature) ─────────────────────────────────── */
-
-.hud {
-  position: fixed; top: 0; right: 0; bottom: 0; z-index: 30;
-  width: var(--hud-w);
-  display: flex; flex-direction: column; align-items: flex-end; justify-content: center;
-  gap: 26px;
-  padding: 96px 20px 40px;
-  border-left: 1px solid var(--hairline);
-  background: linear-gradient(270deg, rgba(4,6,10,.55), rgba(4,6,10,0));
-  font-size: 11px; letter-spacing: .14em;
-  transition: opacity .5s;
-}
-
-.hud__live { display: flex; align-items: center; gap: 6px; color: var(--dim); }
-.hud__dot { width: 6px; height: 6px; border-radius: 50%; background: var(--ask); box-shadow: 0 0 8px var(--ask); animation: blink 1.6s infinite; }
-@keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: .25; } }
-
-.hud__zones { list-style: none; display: flex; flex-direction: column; gap: 12px; text-align: right; }
-.hud__zones li {
-  color: rgba(143,163,156,.5);
-  position: relative; padding-right: 14px;
-  transition: color .35s, text-shadow .35s;
-}
-.hud__zones li::after {
-  content: ''; position: absolute; right: 0; top: 50%; width: 7px; height: 1px;
-  background: rgba(143,163,156,.4); transform: translateY(-50%);
-  transition: background .35s, width .35s, box-shadow .35s;
-}
-.hud__zones li.is-on { color: var(--bid); text-shadow: 0 0 14px rgba(43,243,150,.7); }
-.hud__zones li.is-on::after { background: var(--bid); width: 12px; box-shadow: 0 0 10px var(--bid); }
-
-.hud__candle { position: relative; width: 12px; height: clamp(130px, 24vh, 240px); margin-right: 2px; }
-.hud__candleWick {
-  position: absolute; left: 50%; top: 0; bottom: 0; width: 1px; margin-left: -0.5px;
-  background: rgba(190,230,215,.22);
-}
-.hud__candleFill {
-  position: absolute; left: 0; right: 0; bottom: 0; height: 0%;
-  background: linear-gradient(180deg, var(--bid), rgba(43,243,150,.35));
-  border-radius: 2px;
-  box-shadow: 0 0 16px rgba(43,243,150,.5);
-}
-
-.hud__data { display: flex; flex-direction: column; gap: 12px; text-align: right; }
-.hud__data dt { color: rgba(143,163,156,.55); font-size: 9.5px; letter-spacing: .22em; }
-.hud__data dd { color: var(--ink); font-size: 13px; margin-top: 2px; font-variant-numeric: tabular-nums; }
-
 /* ── scroll cue ────────────────────────────────────────────────── */
 
 .cue {
@@ -431,10 +383,6 @@ a { color: inherit; text-decoration: none; }
 
 @media (max-width: 860px) {
   :root { --hud-w: 60px; }
-  .hud { padding: 90px 10px 30px; gap: 20px; }
-  .hud__zones { display: none; }
-  .hud__data { display: none; }
-  .hud__live { font-size: 8px; }
   .bar__nav a:not(.bar__cta) { display: none; }
   .panel { padding-right: calc(var(--hud-w) + 16px); justify-content: flex-end; padding-bottom: 16vh; }
   .stats { gap: 20px; }
@@ -457,12 +405,11 @@ body.rm .panel {
   min-height: 100vh; pointer-events: auto;
 }
 body.rm .track, body.rm .cue, body.rm #film { display: none; }
-body.rm .hud { opacity: .5; }
 
 /* ── reduced motion: static poster, native scroll ──────────────── */
 
 @media (prefers-reduced-motion: reduce) {
-  .grain, .cue__line::after, .hud__dot, .sessions__dot { animation: none; }
+  .grain, .cue__line::after, .sessions__dot { animation: none; }
   #film { display: none; }
   body { background: var(--bg) url('/assets/stills/hero.png') center/cover no-repeat fixed; }
 }
