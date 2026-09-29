@@ -26,7 +26,7 @@ export default function SiteLayout({ children }) {
             </span>
             <p className="foot__tag">
               Global Markets. Prime Access. Institutional-grade execution across forex, crypto,
-              commodities and indices, with spreads from 0.0 pips and published trading conditions.
+              commodities and indices, with institutional execution and published trading conditions.
             </p>
             <div className="foot__social">
               <a href="https://x.com/PrimeDCX" aria-label="PRIME DCX on X">X</a>
@@ -72,7 +72,6 @@ export default function SiteLayout({ children }) {
               Gros-Islet, Saint Lucia
             </p>
             <a href="mailto:support@primedcx.com">support@primedcx.com</a>
-            <a href="mailto:partners@primedcx.com">partners@primedcx.com</a>
           </div>
         </div>
 

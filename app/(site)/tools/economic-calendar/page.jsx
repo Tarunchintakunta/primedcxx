@@ -1,7 +1,7 @@
-import { pagesTools } from '../../../../lib/pages-tools.mjs';
+import EconomicCalendar from './EconomicCalendar.jsx';
 
 export const metadata = { title: 'Economic Calendar - PRIME DCX' };
 
 export default function Page() {
-  return <main dangerouslySetInnerHTML={{ __html: pagesTools['economic-calendar'].html }} />;
+  return <EconomicCalendar />;
 }

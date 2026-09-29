@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
+  // Server runtime required so /api/economic-calendar can proxy the calendar feed.
   trailingSlash: true,
   images: { unoptimized: true },
 };

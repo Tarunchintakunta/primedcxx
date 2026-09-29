@@ -3,7 +3,7 @@ import './home.css';
 
 export const metadata = {
   title: 'PRIME DCX - Trade Without Limits',
-  description: 'PRIME DCX. Global Markets. Prime Access. Institutional-grade CFD execution across forex, crypto, commodities and indices, with spreads from 0.0 pips.',
+  description: 'PRIME DCX. Global Markets. Prime Access. Institutional-grade CFD execution across forex, crypto, commodities and indices.',
   icons: { icon: '/assets/brand/icon.png' },
 };
 
@@ -59,10 +59,10 @@ export default function HomePage() {
               <span className="line reveal">WITHOUT</span>
               <span className="line reveal accent gold">LIMITS.</span>
             </h1>
-            <p className="hero-sub reveal">Scale with PRIME DCX - 66 currency pairs with institutional-grade execution, spreads from 0.0 pips and deep liquidity. From the street to the globe.</p>
+            <p className="hero-sub reveal">Scale with PRIME DCX - 66 currency pairs with institutional-grade execution and deep liquidity. From the street to the globe.</p>
             <div className="hero-ctas reveal">
               <a className="btn btn-gold" href="https://client.primedcx.com/en/auth/sign-up" role="button">Start Trading</a>
-              <a className="btn btn-dark" href="https://client.primedcx.com/en/auth/sign-in" role="button">Launch Web Trader</a>
+              <a className="btn btn-dark" href="https://client.primedcx.com/en/auth/sign-in" role="button">Log in</a>
             </div>
             <div className="scroll-hint reveal" aria-hidden="true">
               <div className="scroll-hint-line"></div>
@@ -78,11 +78,11 @@ export default function HomePage() {
             <h2 className="scene-title reveal">Built for the<br /><span className="accent">speed of the street.</span></h2>
             <div className="stats">
               <div className="stat reveal">
-                <div className="stat-num"><span className="count" data-to="0.0" data-dec="1">0.0</span></div>
-                <div className="stat-label mono">PIP SPREADS FROM</div>
+                <div className="stat-num"><span className="count" data-to="66">0</span></div>
+                <div className="stat-label mono">CURRENCY PAIRS</div>
               </div>
               <div className="stat reveal">
-                <div className="stat-num"><span className="count" data-to="38" data-suffix="ms">0</span></div>
+                <div className="stat-num"><span className="count" data-to="68" data-suffix="ms">0</span></div>
                 <div className="stat-label mono">AVG. EXECUTION</div>
               </div>
               <div className="stat reveal">
@@ -101,7 +101,7 @@ export default function HomePage() {
             <ul className="assets">
               <li className="asset reveal">
                 <span className="asset-name">Forex</span>
-                <span className="asset-meta mono">60+ PAIRS · EUR/USD 0.0</span>
+                <span className="asset-meta mono">60+ PAIRS · MAJORS TO EXOTICS</span>
               </li>
               <li className="asset reveal">
                 <span className="asset-name">Crypto</span>
@@ -146,7 +146,7 @@ export default function HomePage() {
               <span>Start Trading</span>
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" strokeWidth="2"/></svg>
             </a>
-            <p className="cta-fine mono reveal">LIVE ACCOUNT FROM $100 · SPREADS FROM 0.0 PIPS · WITHDRAWALS IN 24 HOURS</p>
+            <p className="cta-fine mono reveal">LIVE ACCOUNT FROM $100 · INSTITUTIONAL EXECUTION · WITHDRAWALS IN 24 HOURS</p>
           </div>
         </section>
 
@@ -160,7 +160,7 @@ export default function HomePage() {
         <div className="footer-grid">
           <div className="footer-col footer-brand-col">
             <span className="footer-brand">PRIME<i className="lg-div"></i><em>DCX</em></span>
-            <p className="footer-tag">Global Markets. Prime Access. Institutional-grade execution across forex, crypto, commodities and indices, with spreads from 0.0 pips.</p>
+            <p className="footer-tag">Global Markets. Prime Access. Institutional-grade execution across forex, crypto, commodities and indices.</p>
             <div className="footer-social">
               <a href="https://x.com/PrimeDCX" aria-label="PRIME DCX on X">X</a>
               <a href="https://www.instagram.com/primedcx/" aria-label="PRIME DCX on Instagram">IG</a>
@@ -174,7 +174,7 @@ export default function HomePage() {
             <a href="/conditions/contract-specs/">Contract Specifications</a>
             <a href="/conditions/trading-hours/">Trading Hours</a>
             <a href="/accounts/">Account Types</a>
-            <a href="/platform/">Web Trader</a>
+            <a href="/platform/ctrader/">cTrader</a>
           </div>
           <div className="footer-col">
             <h4 className="mono">COMPANY</h4>
