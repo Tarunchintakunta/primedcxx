@@ -571,9 +571,15 @@ body.rm .track, body.rm .cue, body.rm #film { display: none; }
 .foot__brand .lg-div { width: 2px; height: 20px; background: rgba(190,200,196,.55); }
 .foot__brand .lg-dcx { color: var(--gold); }
 .foot__tag { color: var(--dim); font-size: 14px; margin-top: 14px; max-width: 34ch; line-height: 1.6; }
-.foot__social { display: flex; gap: 14px; margin-top: 22px; }
-.foot__social a { color: var(--dim); font-family: 'Plex Mono'; font-size: 11.5px; letter-spacing: .12em; transition: color .25s; }
-.foot__social a:hover { color: var(--gold); }
+.foot__social { display: flex; gap: 10px; margin-top: 22px; }
+.foot__social a {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 38px; height: 38px; border-radius: 50%;
+  border: 1px solid rgba(234,242,245,.22); color: #C8D2DC; text-decoration: none;
+  transition: border-color .25s, color .25s;
+}
+.foot__social a svg { width: 15px; height: 15px; display: block; }
+.foot__social a:hover { border-color: var(--gold); color: var(--gold); }
 .foot h4 { font-family: 'Plex Mono'; font-weight: 400; font-size: 10.5px; letter-spacing: .26em; color: var(--dim); margin-bottom: 18px; }
 .foot ul { list-style: none; display: flex; flex-direction: column; gap: 11px; }
 .foot ul a { font-size: 14px; color: #b7c8c2; transition: color .25s; }

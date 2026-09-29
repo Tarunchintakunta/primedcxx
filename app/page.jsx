@@ -1,5 +1,6 @@
 import Script from 'next/script';
 import './home.css';
+import SocialLinks from './SocialLinks.jsx';
 
 export const metadata = {
   title: 'PRIME DCX - Trade Without Limits',
@@ -42,7 +43,6 @@ export default function HomePage() {
           <a href="/tools/">TOOLS</a>
           <a href="/learn/help-centre/">LEARN</a>
           <a href="/company/">COMPANY</a>
-          <a href="https://client.primedcx.com/en/auth/sign-in">LOG IN</a>
         </nav>
         <a className="nav-cta mono" href="https://client.primedcx.com/en/auth/sign-up">START TRADING</a>
       </header>
@@ -62,7 +62,6 @@ export default function HomePage() {
             <p className="hero-sub reveal">Scale with PRIME DCX - 66 currency pairs with institutional-grade execution and deep liquidity. From the street to the globe.</p>
             <div className="hero-ctas reveal">
               <a className="btn btn-gold" href="https://client.primedcx.com/en/auth/sign-up" role="button">Start Trading</a>
-              <a className="btn btn-dark" href="https://client.primedcx.com/en/auth/sign-in" role="button">Log in</a>
             </div>
             <div className="scroll-hint reveal" aria-hidden="true">
               <div className="scroll-hint-line"></div>
@@ -161,11 +160,7 @@ export default function HomePage() {
           <div className="footer-col footer-brand-col">
             <span className="footer-brand">PRIME<i className="lg-div"></i><em>DCX</em></span>
             <p className="footer-tag">Global Markets. Prime Access. Institutional-grade execution across forex, crypto, commodities and indices.</p>
-            <div className="footer-social">
-              <a href="https://x.com/PrimeDCX" aria-label="PRIME DCX on X">X</a>
-              <a href="https://www.instagram.com/primedcx/" aria-label="PRIME DCX on Instagram">IG</a>
-              <a href="https://www.linkedin.com/company/prime-dcx/" aria-label="PRIME DCX on LinkedIn">IN</a>
-            </div>
+            <SocialLinks className="footer-social" />
           </div>
           <div className="footer-col">
             <h4 className="mono">TRADE</h4>

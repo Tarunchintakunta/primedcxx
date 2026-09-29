@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { NAV, SIGN_IN, SIGN_UP } from '../../lib/nav.mjs';
+import { NAV, SIGN_UP } from '../../lib/nav.mjs';
 
 function Soon() {
   return <span className="mm__soon mono">SOON</span>;
@@ -66,7 +66,6 @@ export default function SiteNav() {
         </nav>
 
         <div className="bar__act mono">
-          <a className="bar__login" href={SIGN_IN}>LOG IN</a>
           <a className="bar__cta" href={SIGN_UP}>START TRADING</a>
           <button
             className={`bar__burger${mobile ? ' is-open' : ''}`}
@@ -150,7 +149,6 @@ export default function SiteNav() {
             </div>
           ))}
           <div className="mnav__act">
-            <a className="btn btn--ghost" href={SIGN_IN}>Log in</a>
             <a className="btn btn--fill" href={SIGN_UP}>Start Trading</a>
           </div>
         </div>

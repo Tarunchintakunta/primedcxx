@@ -1,6 +1,7 @@
 import Script from 'next/script';
 import '../office.css';
 import SiteNav from './SiteNav.jsx';
+import SocialLinks from '../SocialLinks.jsx';
 import { NAV } from '../../lib/nav.mjs';
 
 // Footer mirrors the header IA, minus the legal column which gets its own row.
@@ -28,11 +29,7 @@ export default function SiteLayout({ children }) {
               Global Markets. Prime Access. Institutional-grade execution across forex, crypto,
               commodities and indices, with institutional execution and published trading conditions.
             </p>
-            <div className="foot__social">
-              <a href="https://x.com/PrimeDCX" aria-label="PRIME DCX on X">X</a>
-              <a href="https://www.instagram.com/primedcx/" aria-label="PRIME DCX on Instagram">IG</a>
-              <a href="https://www.linkedin.com/company/prime-dcx/" aria-label="PRIME DCX on LinkedIn">IN</a>
-            </div>
+            <SocialLinks className="foot__social" />
           </div>
 
           {FOOT_COLS.map(col => (
